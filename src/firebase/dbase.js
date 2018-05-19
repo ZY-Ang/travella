@@ -21,3 +21,13 @@ export const getPostsOnceUpToLimitEndOn = (unitId, limit, endOn) =>
 
 export const doAddNewPost = (post) =>
   dbase.ref('posts').push(post);
+
+export const getAllLocationsOnce = () =>
+  dbase.ref('locations').once('value');
+
+export const getLocationsStartingWith = (str) =>
+  dbase.ref('locations')
+    .orderByKey()
+    .startAt(str)
+    .endAt(`${str}\uf8ff`)
+    .once("value");
