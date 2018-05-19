@@ -112,8 +112,8 @@ const Buttons = Loadable({
   loading: Loading,
 });
 
-const Charts = Loadable({
-  loader: () => import('./views/Charts'),
+const Wiki = Loadable({
+  loader: () => import('./views/Wiki/Wiki'),
   loading: Loading,
 });
 
@@ -122,62 +122,10 @@ const Dashboard = Loadable({
   loading: Loading,
 });
 
-const CoreUIIcons = Loadable({
-  loader: () => import('./views/Icons/CoreUIIcons'),
-  loading: Loading,
-});
-
-const Flags = Loadable({
-  loader: () => import('./views/Icons/Flags'),
-  loading: Loading,
-});
-
-const FontAwesome = Loadable({
-  loader: () => import('./views/Icons/FontAwesome'),
-  loading: Loading,
-});
-
-const SimpleLineIcons = Loadable({
-  loader: () => import('./views/Icons/FontAwesome'),
-  loading: Loading,
-});
-
-const Alerts = Loadable({
-  loader: () => import('./views/Notifications/Alerts'),
-  loading: Loading,
-});
-
-const Badges = Loadable({
-  loader: () => import('./views/Notifications/Badges'),
-  loading: Loading,
-});
-
-const Modals = Loadable({
-  loader: () => import('./views/Notifications/Modals'),
-  loading: Loading,
-});
-
-const Colors = Loadable({
-  loader: () => import('./views/Theme/Colors'),
-  loading: Loading,
-});
-
-const Typography = Loadable({
-  loader: () => import('./views/Theme/Typography'),
-  loading: Loading,
-});
-
-const Widgets = Loadable({
-  loader: () => import('./views/Widgets/Widgets'),
-  loading: Loading,
-});
-
-
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
-  { path: '/', exact: true, name: 'Home', component: DefaultLayout },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
-  { path: '/wiki', name: 'Wiki', component: Dashboard },
+  { path: '/wiki', name: 'Wiki', component: Wiki },
   { path: '/feed', name: 'Feed', component: Dashboard },
 ];
 
