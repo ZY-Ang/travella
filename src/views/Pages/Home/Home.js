@@ -16,7 +16,7 @@ class PageHome extends Component {
               <InputGroup className="input-prepend">
                 <InputGroupAddon addonType="prepend">
                   <InputGroupText>
-                    <i className="fa fa-search"></i>
+                    <i className="fa fa-search"/>
                   </InputGroupText>
                 </InputGroupAddon>
                 <Input size="16" type="text" placeholder="Type a city (Sao Paulo, Romania, etc.)" />

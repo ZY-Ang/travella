@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 // Styles
 // CoreUI Icons Set
@@ -23,14 +23,17 @@ import { PageHome, Page404, Page500 } from './views/Pages';
 class App extends Component {
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Switch>
-          <Route exact path="/404" name="Page 404" component={Page404} />
-          <Route exact path="/500" name="Page 500" component={Page500} />
-          <Route path="/" name="Home" component={PageHome} />
-          <Route path="/Dashboard" name="Dashboard" component={DefaultLayout} />
+          <Route path="/dashboard" name="Dashboard" exact component={DefaultLayout} />
+          <Route path="/wiki" name="Dashboard" exact component={DefaultLayout} />
+          <Route path="/feed" name="Dashboard" exact component={DefaultLayout} />
+          <Route path="/404" name="Page 404" component={Page404} />
+          <Route path="/500" name="Page 500" component={Page500} />
+          <Route path="/" name="Home" exact component={PageHome} />
+          <Route path="*" name="Page 404" component={Page404} />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }

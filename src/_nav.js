@@ -7,7 +7,7 @@ export default {
     },
     {
       name: 'Wiki',
-      url: '/wiki',
+      url: '/Wiki',
       icon: 'icon-puzzle',
     },
     {

@@ -19,7 +19,7 @@ import {
 } from './Base';
 
 import { ButtonDropdowns, ButtonGroups, Buttons, BrandButtons } from './Buttons';
-import Charts from './Charts';
+import Wiki from './Wiki/Wiki';
 import Dashboard from './Dashboard';
 import { CoreUIIcons, Flags, FontAwesome, SimpleLineIcons } from './Icons';
 import { Alerts, Badges, Modals } from './Notifications';
@@ -46,7 +46,7 @@ export {
   Tooltips,
   Tabs,
   Tables,
-  Charts,
+  Wiki,
   Dashboard,
   Widgets,
   Jumbotrons,
