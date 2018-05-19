@@ -6442,12 +6442,14 @@ a.text-dark:hover, a.text-dark:focus {
     .aside-menu .tab-content .tab-pane {
       padding: 0; }
 
-.avatar {
+.location {
   position: relative;
   display: inline-block;
-  width: 36px;
-  height: 36px; }
-  .avatar .avatar-status {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+ }
+  .location .avatar-status {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -6456,13 +6458,13 @@ a.text-dark:hover, a.text-dark:focus {
     height: 10px;
     border: 1px solid #fff;
     border-radius: 50em; }
-  .avatar > img {
+  .location > img {
     vertical-align: initial; }
 
 .avatar-lg {
   position: relative;
   display: inline-block;
-  width: 72px;
+  width:;
   height: 72px; }
   .avatar-lg .avatar-status {
     position: absolute;
@@ -6504,10 +6506,10 @@ a.text-dark:hover, a.text-dark:focus {
     border: 1px solid #fff;
     border-radius: 50em; }
 
-.avatars-stack .avatar {
+.avatars-stack .location {
   margin-right: -18px;
   transition: margin-right 0.25s; }
-  .avatars-stack .avatar:hover {
+  .avatars-stack .location:hover {
     margin-right: 0; }
 
 .avatars-stack .avatar-lg {
@@ -7793,7 +7795,7 @@ canvas {
         left: 50%;
         margin-top: -16px;
         margin-left: 0; }
-      .app-header .nav-item .nav-link > .img-avatar, .app-header .nav-item .avatar.nav-link > img {
+      .app-header .nav-item .nav-link > .location-img, .app-header .nav-item .location.nav-link > img {
         height: 35px;
         margin: 0 10px; }
   .app-header .dropdown-menu {
@@ -7836,9 +7838,9 @@ canvas {
   white-space: nowrap;
   vertical-align: middle; }
 
-.img-avatar, .avatar > img,
+.location-img, .location > img,
 .img-circle {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 50em; }
 
