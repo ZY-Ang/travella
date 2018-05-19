@@ -26,8 +26,8 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route path="/dashboard" name="Dashboard" exact component={DefaultLayout} />
-          <Route path="/wiki" name="Dashboard" exact component={DefaultLayout} />
-          <Route path="/feed" name="Dashboard" exact component={DefaultLayout} />
+          <Route path="/wiki" name="Wiki" exact component={DefaultLayout} />
+          <Route path="/feed" name="Feed" exact component={DefaultLayout} />
           <Route path="/404" name="Page 404" component={Page404} />
           <Route path="/500" name="Page 500" component={Page500} />
           <Route path="/" name="Home" exact component={PageHome} />
