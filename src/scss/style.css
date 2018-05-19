@@ -7840,9 +7840,13 @@ canvas {
 
 .location-img, .location > img,
 .img-circle {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 50%;
   width: 100%;
-  height: auto;
-  border-radius: 50em; }
+  padding-top: 100%;
+}
 
 .list-group-accent .list-group-item {
   margin-bottom: 1px;

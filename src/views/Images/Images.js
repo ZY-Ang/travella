@@ -7,7 +7,7 @@ const Images = (props) => (
 	<div className="animated fadeIn">
 		<Row className="container">
 			{props.locations.map((loc) =>
-				<SingleImage url='assets/img/avatars/1.jpg' name="admin@bootstrapmaster.com" />
+				<SingleImage url={loc.img} name={loc.name} />
 			)}
 		</Row>
 	</div>
