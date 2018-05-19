@@ -5,8 +5,7 @@ import SingleImage from './SingleImage.js';
 
 const Images = (props) => (
 	<div className="animated fadeIn">
-		<h1>TEST</h1>
-		<Row>
+		<Row className="container">
 			{props.locations.map((loc) =>
 				<SingleImage url='assets/img/avatars/1.jpg' name="admin@bootstrapmaster.com" />
 			)}
