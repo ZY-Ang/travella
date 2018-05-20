@@ -19,7 +19,7 @@ class Images extends Component {
 	}
 
 	render() {
-		return < div className="animated fadeIn" >
+		return <div className="animated fadeIn" >
 
 			<Modal isOpen={this.state.open} toggle={this.toggleOpen}
 				className={'modal-success'}>
@@ -37,8 +37,8 @@ class Images extends Component {
 			</Modal>
 
 			<Row className="container tall">
-				{this.state.locations.map((loc) =>
-					<SingleImage url={loc.img} name={loc.name} toggleOpen={() => { this.toggleOpen }} />
+				{this.state.locations.map((loc, idx) =>
+					<SingleImage url={loc.img} name={loc.name} toggleOpen={() => { this.toggleOpen }} key={idx} />
 				)}
 			</Row>
 			<Button block color="light">Light</Button>
