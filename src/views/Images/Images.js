@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { CardGroup, Col, Row, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { Line } from 'react-chartjs-2';
 import {SingleImage, BigImage} from '.';
+/**
+ * To be used together with {@code setState()}
+ * to allow for allocation of a dynamic key to
+ * value from the input to the local state object.
+ */
+export const byPropKey = (propertyName, value) => () =>({
+  [propertyName]: value
+});
 
 class Images extends Component {
 	constructor(props) {
@@ -11,21 +19,27 @@ class Images extends Component {
 			locations: props.locations,
 			open: false,
 			openLoc: { img: '', name: '' }
-		}
+		};
 
 		this.toggleOpen = this.toggleOpen.bind(this)
 	}
 
 	toggleOpen(loc) {
-		this.setState({ open: !this.state.open, openLoc: loc })
+    this.setState(byPropKey('open', !this.state.open));
+    this.setState(byPropKey('openLoc', loc));
 	}
+
+	redirect = (url) => {
+	  console.log(url);
+	  window.location.replace(url);
+  };
 
 	render() {
 		return <div className="animated fadeIn" >
 
 			<Modal isOpen={this.state.open} toggle={this.toggleOpen}
-				className={'modal-success'}>
-				<BigImage url={this.state.openLoc.img} name={this.state.openLoc.name} description={this.state.openLoc.description} toggleOpen={() => this.toggleOpen()} />
+				className={'modal-lg modal-success'}>
+				<BigImage redirect={this.redirect} url={this.state.openLoc.img} name={this.state.openLoc.name} description={this.state.openLoc.description} toggleOpen={() => this.toggleOpen(this.state.openLoc)} />
 			</Modal>
 
 			<Row className="container tall">
