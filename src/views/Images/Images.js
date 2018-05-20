@@ -9,13 +9,15 @@ class Images extends Component {
 
 		this.state = {
 			locations: props.locations,
-			open: false
-		} 
+			open: false,
+			openLoc: { img: '', name: '' }
+		}
+
+		this.toggleOpen = this.toggleOpen.bind(this)
 	}
 
-	toggleOpen() {
-		this.setState({ open: !this.state.open })
-		console.log(this.state.open)
+	toggleOpen(loc) {
+		this.setState({ open: !this.state.open, openLoc: loc })
 	}
 
 	render() {
@@ -23,22 +25,13 @@ class Images extends Component {
 
 			<Modal isOpen={this.state.open} toggle={this.toggleOpen}
 				className={'modal-success'}>
-				<ModalHeader toggle={this.toggleOpen}>Modal title</ModalHeader>
-				<ModalBody>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-					culpa qui officia deserunt mollit anim id est laborum.
-         </ModalBody>
-				<ModalFooter>
-					<Button color="secondary" onClick={this.toggleOpen}>Cancel</Button>
-				</ModalFooter>
+				{this.state.openLoc.name}
+				<img src={this.state.openLoc.img} onClick={this.toggleOpen}></img>
 			</Modal>
 
 			<Row className="container tall">
 				{this.state.locations.map((loc, idx) =>
-					<SingleImage url={loc.img} name={loc.name} toggleOpen={() => { this.toggleOpen }} key={idx} />
+					<SingleImage url={loc.img} name={loc.name} toggleOpen={() => this.toggleOpen(loc)} key={idx} />
 				)}
 			</Row>
 			<Button block color="light">Light</Button>
