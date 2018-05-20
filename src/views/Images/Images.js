@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CardGroup, Col, Row, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { Line } from 'react-chartjs-2';
-import SingleImage from './SingleImage.js';
+import {SingleImage, BigImage} from '.';
 
 class Images extends Component {
 	constructor(props) {
@@ -25,8 +25,7 @@ class Images extends Component {
 
 			<Modal isOpen={this.state.open} toggle={this.toggleOpen}
 				className={'modal-success'}>
-				{this.state.openLoc.name}
-				<img src={this.state.openLoc.img} onClick={this.toggleOpen}></img>
+				<BigImage url={this.state.openLoc.img} name={this.state.openLoc.name} description={this.state.openLoc.description} toggleOpen={() => this.toggleOpen()} />
 			</Modal>
 
 			<Row className="container tall">
