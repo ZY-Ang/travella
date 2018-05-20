@@ -1,7 +1,32 @@
 import React, { Component } from 'react';
 import { Button, Col, Container, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import {withRouter} from "react-router-dom";
+
+/**
+ * Returns {@code true} if {@param event}
+ * is the equivalent of an 'enter' keypress.
+ */
+export const isKeyPressedEnter = (event) => {
+  return (event.charCode === 13);
+};
+
+/**
+ * Calls {@param _function} if {@param event}
+ * is the equivalent of an 'enter' keypress.
+ */
+export const doOnKeyPressEnter = (_function) => (event) => {
+  if (isKeyPressedEnter(event)) {
+    return _function(event);
+  }
+};
 
 class PageHome extends Component {
+  onSubmit = (event) => {
+    this.props.history.push('/dashboard');
+    if (event) {
+      event.preventDefault();
+    }
+  };
   render() {
     return (
       <div className="app flex-row align-items-center">
@@ -19,9 +44,9 @@ class PageHome extends Component {
                     <i className="fa fa-search"/>
                   </InputGroupText>
                 </InputGroupAddon>
-                <Input size="16" type="text" placeholder="Type a city (Sao Paulo, Romania, etc.)" />
+                <Input size="16" onKeyPress={doOnKeyPressEnter(this.onSubmit)} type="text" placeholder="Type a city (Sao Paulo, Romania, etc.)" />
                 <InputGroupAddon addonType="append">
-                  <Button color="info">Search</Button>
+                  <Button color="info" onClick={this.onSubmit}>Search</Button>
                 </InputGroupAddon>
               </InputGroup>
             </Col>
@@ -32,4 +57,4 @@ class PageHome extends Component {
   }
 }
 
-export default PageHome;
+export default withRouter(PageHome);
