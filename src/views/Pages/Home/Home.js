@@ -21,8 +21,17 @@ export const doOnKeyPressEnter = (_function) => (event) => {
 };
 
 class PageHome extends Component {
+  state = {
+    text: "",
+    error: ""
+  };
+
   onSubmit = (event) => {
-    this.props.history.push('/dashboard');
+    if (this.state.text.toLowerCase() === 'romania') {
+      this.props.history.push('/dashboard');
+    } else {
+      this.setState({error: "Location not found!"});
+    }
     if (event) {
       event.preventDefault();
     }
@@ -44,11 +53,19 @@ class PageHome extends Component {
                     <i className="fa fa-search"/>
                   </InputGroupText>
                 </InputGroupAddon>
-                <Input size="16" onKeyPress={doOnKeyPressEnter(this.onSubmit)} type="text" placeholder="Type a city (Sao Paulo, Romania, etc.)" />
+                <Input size="16" onChange={(event) => {
+                  this.setState({text: event.target.value, error: ""});
+
+                }} onKeyPress={doOnKeyPressEnter(this.onSubmit)} type="text" placeholder="Type a city (Sao Paulo, Romania, etc.)" />
                 <InputGroupAddon addonType="append">
                   <Button color="info" onClick={this.onSubmit}>Search</Button>
                 </InputGroupAddon>
               </InputGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="text-center">
+              <p className="form-control-static text-danger">{this.state.error}</p>
             </Col>
           </Row>
         </Container>
