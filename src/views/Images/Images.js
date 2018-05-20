@@ -33,7 +33,7 @@ class Images extends Component {
 					<SingleImage url={loc.img} name={loc.name} toggleOpen={() => this.toggleOpen(loc)} key={idx} />
 				)}
 			</Row>
-			<Button block color="light">Light</Button>
+			<Button block color="light">Did we miss anything?'</Button>
 		</div >
 	}
 }
