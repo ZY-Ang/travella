@@ -26,6 +26,7 @@ import { Alerts, Badges, Modals } from './Notifications';
 import { Page404, Page500 } from './Pages';
 import { Colors, Typography } from './Theme';
 import Widgets from './Widgets';
+import Images from './Images'
 
 export {
   Badges,

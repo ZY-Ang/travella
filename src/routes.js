@@ -122,11 +122,16 @@ const Dashboard = Loadable({
   loading: Loading,
 });
 
+const FeedPage = Loadable({
+  loader: () => import('./views/Pages/FeedPage'),
+  loading: Loading,
+});
+
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/wiki', name: 'Wiki', component: Wiki },
-  { path: '/feed', name: 'Feed', component: Dashboard },
+  { path: '/feed', name: 'Feed', component: FeedPage },
 ];
 
 export default routes;

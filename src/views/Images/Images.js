@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CardGroup, Col, Row } from 'reactstrap';
+import { CardGroup, Col, Row, Button } from 'reactstrap';
 import { Line } from 'react-chartjs-2';
 import SingleImage from './SingleImage.js';
 
@@ -10,6 +10,7 @@ const Images = (props) => (
 				<SingleImage url={loc.img} name={loc.name} />
 			)}
 		</Row>
+		<Button block color="light">Light</Button>
 	</div>
 )
 
