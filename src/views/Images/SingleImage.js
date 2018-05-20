@@ -11,6 +11,6 @@ const SingleImage = ({ url, name, toggleOpen }) => {
 			</div>
 		</Col>
 	)
-}
+};
 
 export default SingleImage;

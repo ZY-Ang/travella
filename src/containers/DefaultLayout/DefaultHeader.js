@@ -53,7 +53,7 @@ class DefaultHeader extends Component {
                   <i className="fa fa-search"/>
                 </InputGroupText>
               </InputGroupAddon>
-              <Input size="16" onChange={this.onSearchChange} type="text" placeholder="Type a city" />
+              <Input size="16" onChange={this.onSearchChange} type="text" placeholder="Type a location" />
               <InputGroupAddon addonType="append">
                 <Button color="info">Search</Button>
               </InputGroupAddon>

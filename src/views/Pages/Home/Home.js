@@ -44,7 +44,7 @@ class PageHome extends Component {
             <Col md="6">
               <div className="clearfix text-center">
                 <h1 className="display-3 mr-4">traVella</h1>
-                <h4 className="pt-3">Empowering travellers.</h4>
+                <h4 className="pt-3">Empowering Travel Discovery.</h4>
                 <p className="text-muted float-left"/>
               </div>
               <InputGroup className="input-prepend">
