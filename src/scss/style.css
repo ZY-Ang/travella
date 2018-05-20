@@ -1635,6 +1635,10 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     .form-inline .custom-control-label {
       margin-bottom: 0; } }
 
+.center {
+  text-align: center;
+}
+
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -7838,9 +7842,14 @@ canvas {
 
 .img-avatar, .avatar > img,
 .img-circle {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50em; }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 50%;
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover,
+}
 
 .list-group-accent .list-group-item {
   margin-bottom: 1px;
